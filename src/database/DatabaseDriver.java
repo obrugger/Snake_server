@@ -14,8 +14,7 @@ public class DatabaseDriver {
     /**
      * Specifies the connection to the server - Url, User and password needs to be adjusted to the individual database.
      */
-    private String sqlUrl = "jdbc:mysql://localhost:3306/dis";
-    //private String sqlUrl = "jdbc:mysql://"+Config.getHost()+":"+Config.getPort()+"/" +Config.getDbname();
+    private String sqlUrl = "jdbc:mysql://"+ Config.getHost() + ":" + Config.getPort() + "/" + Config.getDbname();
     private String sqlUser = Config.getUsername();
     private String sqlPassword = Config.getPassword();
 
@@ -48,48 +47,6 @@ public class DatabaseDriver {
         return connection;
     }
 
-//    public static void checkConnection() {
-//
-//        try {
-//            connection = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword);
-//
-//            if (connection.isValid(1000)) {
-//                System.out.println("You are connected");
-//
-//            } else {
-//                System.out.println("Connection lost");
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            System.exit(1);
-//        }
-//
-//    }
-//
-//
-//
-//    /**
-//     * Checks if the database exists or not
-//     * @return bool
-//     * @throws SQLException
-//     */
-//
-//    public static boolean DbExist() throws SQLException {
-//
-//        ResultSet resultSet = connection.getMetaData().getCatalogs();
-//        while (resultSet.next()) {
-//            String databaseName = resultSet.getString(1);
-//
-//            if (databaseName.equals(dbName)) {
-//                return true;
-//
-//            } else {
-//                doQuery("Indsæt SQL dump");
-//            }
-//        }
-//
-//        return false;
-//    }
 
     /**
      * Method used to close to DB connection

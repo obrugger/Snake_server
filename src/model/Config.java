@@ -1,8 +1,5 @@
 package model;
 
-//import org.codehaus.jettison.json.JSONException;
-//import org.codehaus.jettison.json.JSONObject;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 

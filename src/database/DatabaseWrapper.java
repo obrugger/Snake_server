@@ -143,58 +143,6 @@ public class  DatabaseWrapper {
         return game;
     }
 
-//    public Score getScoresByUserID(int id) {
-//        Score score = null;
-//        ResultSet resultSet = null;
-//        PreparedStatement ps;
-//
-//        try {
-//            ps = connection.prepareStatement(dbDriver.getScoresByUserID());
-//
-//            ps.setInt(1, id);
-//            resultSet = ps.executeQuery();
-//
-//            while (resultSet.next()) {
-//
-//                // Creating Gamer object (user) and setting user_id
-//                Gamer user = new Gamer();
-//                user.setId(resultSet.getInt("user_id"));
-//
-//                // Creating Gamer object (opponent) and setting user_id
-//                Gamer opponent = new Gamer();
-//                opponent.setId(resultSet.getInt("opponent_id"));
-//
-//                // Creating game object (game) and setting game_id
-//                Game game = new Game();
-//                game.setGameId(resultSet.getInt("game_id"));
-//
-//                // Creating score objects and adding user + game object
-//                score = new Score();
-//                score.setId(resultSet.getInt("id"));
-//                score.setScore(resultSet.getInt("score"));
-//
-//                // Adding objects to our Score object
-//                score.setUser(user);
-//                score.setGame(game);
-//                score.setOpponent(opponent);
-//
-//            }
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        finally {
-//            try {
-//                resultSet.close();
-//            } catch (SQLException ex) {
-//                ex.printStackTrace();
-//                dbDriver.close();
-//            }
-//        }
-//        return score;
-//    }
-
     /**
      * The following three methods (getUsers(), getGames() & getScores()) return an array of objects of the type User/Game/Score.
      * The returned array contains all entries from the relevant table in the database.

@@ -43,8 +43,6 @@ public class Api {
             HashMap <String, Integer> hashMap = Logic.authenticateUser(user.getUsername(), user.getPassword());
 
 
-
-
             if (hashMap.get("usertype") == 0) {
                 hashMap.put("code", 0);
             }
@@ -102,31 +100,6 @@ public class Api {
                 .header("Access-Control-Allow-Origin", "*")
                 .build();
     }
-
-    /*
-    @DELETE //DELETE-request fjernelse af data (bruger): Slet bruger
-    @Path("/users/{userid}")
-    @Produces("application/json")
-    public Response deleteUser(@PathParam("userid") int userId) {
-
-        int deleteUser = Logic.deleteUser(userId);
-
-        if (deleteUser == 1) {
-            return Response
-                    .status(200)
-                    .entity("{\"message\":\"User was deleted\"}")
-                    .header("Access-Control-Allow-Headers", "*")
-                    .build();
-        } else {
-            return Response
-                    .status(400)
-                    .entity("{\"message\":\"Failed. User was not deleted\"}")
-                    .header("Access-Control-Allow-Headers", "*")
-                    .build();
-        }
-
-    }
-*/
 
     @POST //POST-request: Ny data der skal til serveren; En ny bruger oprettes
     @Path("/users/")
