@@ -200,7 +200,7 @@ public class Tui {
         } while (!userTypeApproved);
 
 
-        return userType;
+        return userType-1;
 
     }
 
