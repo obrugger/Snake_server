@@ -166,7 +166,7 @@ public class  DatabaseWrapper {
             while (resultSet.next()) {
 
                 if (!resultSet.getString("status").equals("deleted") &&
-                        resultSet.getInt("type")!=0) {
+                        resultSet.getInt("type") != 0) {
                     user = new User();
 
                     user.setId(resultSet.getInt("id"));
@@ -198,24 +198,35 @@ public class  DatabaseWrapper {
 
     public ArrayList<Scores> getHigh(){
 
+        //Instantiates resultset
         ResultSet resultSet = null;
+        //Declare preparedstatement
         PreparedStatement ps;
+        //Declare scores
         Scores scores;
+        //Instantiates arraylist of scores.
         ArrayList<Scores> result = null;
 
         try {
+            //Instantiate ps to contain result from scores table.
             ps = connection.prepareStatement(dbDriver.getSqlRecords("scores"));
+            //Instantiate resultset to execute SQL query.
             resultSet = ps.executeQuery();
 
+            //Initialize result.
             result = new ArrayList<>();
 
+            //While resultSet has more indexes.
             while (resultSet.next()){
 
+                //Initialize scores object.
                 scores = new Scores();
 
+                //Sets score and userid from table in database.
                 scores.setScore(resultSet.getInt("score"));
                 scores.setUserId(resultSet.getInt("user_id"));
 
+                //adds scores object to arraylist.
                 result.add(scores);
             }
 
@@ -434,7 +445,8 @@ public class  DatabaseWrapper {
             createUser.setString(3, user.getEmail());
             createUser.setString(4, user.getUsername());
             createUser.setString(5, user.getPassword());
-            createUser.setInt(6, user.getType());
+            createUser.setString(6, user.getStatus());
+            createUser.setInt(7, user.getType());
 
             createUser.executeUpdate();
         }

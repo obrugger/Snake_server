@@ -245,11 +245,14 @@ public class Logic {
      */
     public static ArrayList<Scores> getHighscore(){
 
+        //Declare arraylist of scores
         ArrayList<Scores> scores;
 
         try {
+            //Instantiates scores array with db-method getHigh
             scores = db.getHigh();
 
+            //Uses Collections-method sort, and arranging them by the scores integer.
             Collections.sort(scores, new Comparator<Scores>() {
                 @Override
                 public int compare(Scores o1, Scores o2) {

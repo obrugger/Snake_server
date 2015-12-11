@@ -288,9 +288,10 @@ public class Api {
     @Produces("application/json")
     public Response getHighscore(String data) {
 
-        //Highscore highscore = Logic.getHigh();
+        //Instantaites an arraylist of scores by calling getHighscore method from Logic.
         ArrayList<Scores> highscore = Logic.getHighscore();
 
+        //Returns response.
         return Response
                 .status(200)
                 .entity(new Gson().toJson(highscore))

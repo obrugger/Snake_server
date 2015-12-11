@@ -134,6 +134,7 @@ public class Tui {
         usr.setEmail(enterEmail());
         usr.setUsername(enterUsername());
         usr.setPassword(enterPassword());
+        usr.setStatus("active");
         usr.setType(enterUserType());
 
         return usr;
