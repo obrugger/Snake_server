@@ -230,7 +230,6 @@ public class  DatabaseWrapper {
                 result.add(scores);
             }
 
-
         }
         catch (Exception e){
             e.printStackTrace();
